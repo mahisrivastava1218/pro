@@ -4,6 +4,9 @@ const dotenv= require('dotenv');
 const app=express();
 dotenv.config({path: './config.env'})
 require('./review')
+// link router files to make root easy
+app.use(require('./router/auth'))
+// const User=require('./model/userSchema')
 const PORT= process.env.PORT
 
 mongoose.set('strictQuery', true);
